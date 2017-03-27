@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on A. Gokcen Mahmutoglu</title>
+    <link>https://gmahmutoglu.github.io/tags/software/index.xml</link>
+    <description>Recent content in Software on A. Gokcen Mahmutoglu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 A. Gokcen Mahmutoglu</copyright>
+    <atom:link href="/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>VAPP - The Berkeley Verilog-A Parser and Processor</title>
+      <link>https://gmahmutoglu.github.io/project/vapp/</link>
+      <pubDate>Thu, 11 Aug 2016 13:09:58 -0700</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/project/vapp/</guid>
+      <description>
+
+&lt;p&gt;&lt;br /&gt;
+VAPP is a MATLAB/Octave tool that translates Verilog-A device models into &lt;a href=&#34;https://doi.org/10.1109/ICCAD.2011.6105356&#34;&gt;ModSpec&lt;/a&gt;.
+It is a subproject of the Berkeley Model and Algorithm Prototyping Platform (&lt;a href=&#34;https://github.com/jaijeet/MAPP&#34;&gt;MAPP&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h2 id=&#34;download-and-installation&#34;&gt;Download and Installation&lt;/h2&gt;
+
+&lt;p&gt;Git users please refer to the README at the &lt;a href=&#34;https://github.com/jaijeet/VAPP&#34;&gt;VAPP Github main page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Non git users can access a zip file containing the latest VAPP snapshot using the following links.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jaijeet/VAPP/archive/2017-02-27-release-github.zip&#34;&gt;MATLAB version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jaijeet/VAPP/archive/2017-02-27-release-github-Octave_compatible.zip&#34;&gt;Octave version&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For further instructions about installing VAPP, please refer to the README on Github or in the zip files provided in the links above.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-purpose-of-vapp&#34;&gt;The Purpose of VAPP&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Semiconductor_device_modeling&#34;&gt;Device models&lt;/a&gt; are used by simulators as computational representations of physical devices.
+Most device models are written in the application specific language &lt;a href=&#34;https://en.wikipedia.org/wiki/Verilog-AMS&#34;&gt;Verilog-A&lt;/a&gt;.
+Verilog-A is a high level language that uses an abstract node/branch based representation to describe device dynamics.
+Native Verilog-A code is not executable.
+It has to be converted into a &lt;a href=&#34;https://en.wikipedia.org/wiki/Differential_algebraic_equation&#34;&gt;DAE&lt;/a&gt; format before it can be executed.&lt;/p&gt;
+
+&lt;p&gt;VAPP takes a Verilog-A file as input and computes an internal DAE representation of the device code.
+It then prints out the model equations using the &lt;a href=&#34;https://doi.org/10.1109/ICCAD.2011.6105356&#34;&gt;ModSpec&lt;/a&gt; API.&lt;/p&gt;
+
+&lt;p&gt;ModSpec models can be directly executed, probed, debugged without the need for a specific simulator.
+They can also be used in various simulations/analyses using &lt;a href=&#34;https://github.com/jaijeet/MAPP&#34;&gt;MAPP&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;device-model-development-workflow-using-mapp-and-vapp&#34;&gt;Device Model Development Workflow using MAPP and VAPP&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;../../img/project/vapp/diag-mapp_development_flow.png&#34; alt=&#34;Device Model Development Workflow using MAPP and VAPP&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The above graphic shows a workflow for device model developers who want to be able to develop models in a computational environment such as MATLAB and then publish them using Verilog-A.
+In the first step, model developers implement, test and debug their model code using ModSpec in MATLAB/Octave.
+Second, robust model code is then ported to Verilog-A manually.
+Third, the Verilog-A model is converted back into ModSpec using VAPP so that the Verilog-A code can be validated by comparing the translated code against the original ModSpec code.
+The Verilog-A model is ready to be deployed if the simulation results obtained by using VAPP generated code match the results from the original code.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A. Gokcen Mahmutoglu on A. Gokcen Mahmutoglu</title>
+    <link>https://gmahmutoglu.github.io/index.xml</link>
+    <description>Recent content in A. Gokcen Mahmutoglu on A. Gokcen Mahmutoglu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 A. Gokcen Mahmutoglu</copyright>
+    <lastBuildDate>Thu, 11 Aug 2016 13:09:58 -0700</lastBuildDate>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>VAPP - The Berkeley Verilog-A Parser and Processor</title>
+      <link>https://gmahmutoglu.github.io/project/vapp/</link>
+      <pubDate>Thu, 11 Aug 2016 13:09:58 -0700</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/project/vapp/</guid>
+      <description>
+
+&lt;p&gt;&lt;br /&gt;
+VAPP is a MATLAB/Octave tool that translates Verilog-A device models into &lt;a href=&#34;https://doi.org/10.1109/ICCAD.2011.6105356&#34;&gt;ModSpec&lt;/a&gt;.
+It is a subproject of the Berkeley Model and Algorithm Prototyping Platform (&lt;a href=&#34;https://github.com/jaijeet/MAPP&#34;&gt;MAPP&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h2 id=&#34;download-and-installation&#34;&gt;Download and Installation&lt;/h2&gt;
+
+&lt;p&gt;Git users please refer to the README at the &lt;a href=&#34;https://github.com/jaijeet/VAPP&#34;&gt;VAPP Github main page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Non git users can access a zip file containing the latest VAPP snapshot using the following links.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jaijeet/VAPP/archive/2017-02-27-release-github.zip&#34;&gt;MATLAB version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jaijeet/VAPP/archive/2017-02-27-release-github-Octave_compatible.zip&#34;&gt;Octave version&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For further instructions about installing VAPP, please refer to the README on Github or in the zip files provided in the links above.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-purpose-of-vapp&#34;&gt;The Purpose of VAPP&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Semiconductor_device_modeling&#34;&gt;Device models&lt;/a&gt; are used by simulators as computational representations of physical devices.
+Most device models are written in the application specific language &lt;a href=&#34;https://en.wikipedia.org/wiki/Verilog-AMS&#34;&gt;Verilog-A&lt;/a&gt;.
+Verilog-A is a high level language that uses an abstract node/branch based representation to describe device dynamics.
+Native Verilog-A code is not executable.
+It has to be converted into a &lt;a href=&#34;https://en.wikipedia.org/wiki/Differential_algebraic_equation&#34;&gt;DAE&lt;/a&gt; format before it can be executed.&lt;/p&gt;
+
+&lt;p&gt;VAPP takes a Verilog-A file as input and computes an internal DAE representation of the device code.
+It then prints out the model equations using the &lt;a href=&#34;https://doi.org/10.1109/ICCAD.2011.6105356&#34;&gt;ModSpec&lt;/a&gt; API.&lt;/p&gt;
+
+&lt;p&gt;ModSpec models can be directly executed, probed, debugged without the need for a specific simulator.
+They can also be used in various simulations/analyses using &lt;a href=&#34;https://github.com/jaijeet/MAPP&#34;&gt;MAPP&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;device-model-development-workflow-using-mapp-and-vapp&#34;&gt;Device Model Development Workflow using MAPP and VAPP&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;./img/project/vapp/diag-mapp_development_flow.png&#34; alt=&#34;Device Model Development Workflow using MAPP and VAPP&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The above graphic shows a workflow for device model developers who want to be able to develop models in a computational environment such as MATLAB and then publish them using Verilog-A.
+In the first step, model developers implement, test and debug their model code using ModSpec in MATLAB/Octave.
+Second, robust model code is then ported to Verilog-A manually.
+Third, the Verilog-A model is converted back into ModSpec using VAPP so that the Verilog-A code can be validated by comparing the translated code against the original ModSpec code.
+The Verilog-A model is ready to be deployed if the simulation results obtained by using VAPP generated code match the results from the original code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Polynomial Chaos in MAPP</title>
+      <link>https://gmahmutoglu.github.io/project/poly_chaos/</link>
+      <pubDate>Thu, 02 Mar 2017 13:09:58 -0700</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/project/poly_chaos/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Polynomial_chaos&#34;&gt;Polynomial chaos&lt;/a&gt; is an expansion method for approximating sample paths of stochastic processes.
+In a polynomial chaos expansion, a complicated stochastic process is represented with a weighted linear combination of orthogonal polynomials (Legendre, Laguerre etc.) and standard random variables (uniform, Gaussian etc.).&lt;/p&gt;
+
+&lt;p&gt;Polynomial chaos lends itself especially well for &lt;em&gt;uncertainty quantification&lt;/em&gt; in simulations.
+The uncertainty is usually in a quantity that appears as a parameter in the simulation.
+For example, because of process variation, the threshold voltages of transistors will be random variables.
+The graphic below shows transient simulation results for a &lt;a href=&#34;https://en.wikipedia.org/wiki/Inverter_(logic_gate)&#34;&gt;CMOS inverter&lt;/a&gt; where the threshold voltages are randomly sampled from a uniform distribution.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./img/project/poly_chaos/diag-cmos_inverter_small.png&#34; alt=&#34;CMOS inverter schematic&#34; /&gt;
+&lt;img src=&#34;./img/project/poly_chaos/cmos_inverter_montecarlo.gif&#34; alt=&#34;CMOS inverter transient simulation&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The assessment of the uncertainty created by the variation of threshold voltages can be done by simulating the circuit multiple times with different parameters, i.e., the Monte Carlo way.
+Using polynomial chaos, this assessment can also be done in a &lt;strong&gt;non Monte Carlo&lt;/strong&gt; manner.
+This non Monte Carlo uncertainty quantification method was implemented in &lt;a href=&#34;https://github.com/jaijeet/MAPP&#34;&gt;MAPP&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To this end, the circuit state vector $\mathbf{x}$ is expanded in a polynomial chaos series of length $P$.&lt;/p&gt;
+
+&lt;p&gt;$$ \mathbf{x}(t, \boldsymbol{\varphi}) = \sum_{i=0}^{P-1} \mathbf{u}_i(t) \psi_i(\boldsymbol{\eta}) $$&lt;/p&gt;
+
+&lt;p&gt;The symbols in the above equation represent the following quantities:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$\boldsymbol{\varphi}$: Vector of random parameters in the system.&lt;/li&gt;
+&lt;li&gt;$\mathbf{u}_i(t)$: Time-varying polynomial chaos coefficients&lt;/li&gt;
+&lt;li&gt;$\psi_i$: A set of orthogonal polynomials such as Legendre or Laguerre.&lt;/li&gt;
+&lt;li&gt;$\boldsymbol{\eta}$: Vector of independent random variables. These random variables are usually chosen to be either uniform or normal.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After the circuit state vector $\mathbf{x}$ is put into this expanded form, we can go ahead and plug it in the circuit DAEs.&lt;/p&gt;
+
+&lt;p&gt;$$ F(\mathbf{x},\boldsymbol{\varphi}) = F\left(\sum_{i=0}^{P-1} \mathbf{u}_i \psi_i(\boldsymbol{\eta}),\boldsymbol{\varphi}\right) = 0$$&lt;/p&gt;
+
+&lt;p&gt;And define a new residual function $G$ such that&lt;/p&gt;
+
+&lt;p&gt;$$ G \left( \mathbf{u}, \boldsymbol{\eta} \right) = F\left(\sum_{i=0}^{P-1} \mathbf{u}_i \psi_i(\boldsymbol{\eta}),\boldsymbol{\varphi}\right). $$&lt;/p&gt;
+
+&lt;p&gt;Now, it is easy to compute averages over $\boldsymbol{\eta}$ for $G$.&lt;/p&gt;
+
+&lt;p&gt;$$ H_j(\mathbf{u}) = \langle G(\mathbf{u}, \boldsymbol{\eta}), \psi_j(\boldsymbol{\eta})\rangle = 0 $$&lt;/p&gt;
+
+&lt;p&gt;What we are left with are deterministic equations for the polynomial chaos expansion coefficients, $\mathbf{u}$.
+By solving the $H_j(\mathbf{u}) = 0$ equations simultaneously for all $j$, we can determine the polynomial chaos representation of the circuit unknowns.
+This enables us to compute the mean and variance of the circuit solution when the parameter variation is included in the equations.
+This computation is easy because we have chosen the random polynomial functions $\psi_i(\boldsymbol{\eta})$ such that they are zero mean and unit variance as well as orthogonal to each other.&lt;/p&gt;
+
+&lt;p&gt;For the mean we have&lt;/p&gt;
+
+&lt;p&gt;$$
+  E\left[\mathbf{x}(t, \boldsymbol{\varphi})\right] \approx E\left[\sum_{i=0}^{P-1} \mathbf{u}_i(t)\psi_i(\boldsymbol{\eta})\right] = \mathbf{u}_0(t).
+$$&lt;/p&gt;
+
+&lt;p&gt;And for the variance we have&lt;/p&gt;
+
+&lt;p&gt;$$ E\left[\mathbf{x}{(t, \boldsymbol{\varphi})}^2\right] \approx E\left[\sum_{i=0}^{P-1} \sum_{j=0}^{P-1} \mathbf{u}_i{(t)}\mathbf{u}_j{(t)} \psi_i(\boldsymbol{\eta}) \psi_j(\boldsymbol{\eta})\right] = \sum_{i=0}^{P-1} \mathbf{u}_i{(t)}^2. $$&lt;/p&gt;
+
+&lt;p&gt;The result of this computation for the inverter circuit is shown below.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;./img/project/poly_chaos/cmos_inverter_mean_std.png&#34; alt=&#34;The mean and the standard deviation of the random output of a CMOS inverter, computed using polynomial chaos in MAPP.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        The mean and the standard deviation of the random output of a CMOS inverter, computed using polynomial chaos in MAPP.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Non Monte Carlo Analysis of Low-Frequency Noise: Exposition of Intricate Nonstationary Behavior and Comparison with Legacy Models</title>
+      <link>https://gmahmutoglu.github.io/publication/2016-tcad/</link>
+      <pubDate>Thu, 11 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2016-tcad/</guid>
+      <description>&lt;p&gt;Non Monte Carlo Analysis of Low-Frequency Noise: Exposition of Intricate Nonstationary Behavior and Comparison with Legacy Models
+(&lt;a href=&#34;http://dx.doi.org/10.1109/TCAD.2016.2529431&#34;&gt;IEEE Xplore&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;This work introduces a new noise model for nonstationary, LF noise analysis with &lt;strong&gt;non Monte Carlo&lt;/strong&gt; methods.
+It includes an extensive case study on a previously published sawtooth oscillator circuit and its noise behavior under &lt;strong&gt;switched biasing&lt;/strong&gt; operation.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;./img/publication/2016-tcad/diag-sawtooth-sw.png&#34; alt=&#34;A sawtooth oscillator circuit with a noisy transistor (M7) and a switching subcircuit (blue) to turn M7 on and off.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        A sawtooth oscillator circuit with a noisy transistor (M7) and a switching subcircuit (blue) to turn M7 on and off.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;./img/publication/2016-tcad/fig-sawtooth-switched-psd.png&#34; alt=&#34;LF noise analysis results for the sawtooth oscillator cirucit.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        LF noise analysis results for the sawtooth oscillator cirucit.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Analysis of Low-Frequency Noise in Switched MOSFET Circuits: Revisited and Clarified</title>
+      <link>https://gmahmutoglu.github.io/publication/2015-tcas/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2015-tcas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modeling and Simulation of Low-Frequency Noise in Nano Devices: Stochastically Correct and Carefully Crafted Numerical Techniques</title>
+      <link>https://gmahmutoglu.github.io/publication/2015-tcad/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2015-tcad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modeling and analysis of nonstationary low-frequency noise in circuit simulators: Enabling non Monte Carlo techniques</title>
+      <link>https://gmahmutoglu.github.io/publication/2015-iccad/</link>
+      <pubDate>Sat, 01 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2015-iccad/</guid>
+      <description>&lt;p&gt;This work paves the way for a low-frequency (1/f, RTS &lt;em&gt;etc.&lt;/em&gt;) noise model that lends itself to &lt;strong&gt;nonstaionary&lt;/strong&gt;, &lt;strong&gt;non Monte Carlo&lt;/strong&gt; noise analysis.
+The paper includes implementation details of this framework for the example of the noise analysis of circuits with periodic excitations using &lt;strong&gt;harmonic balance&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;./img/publication/2015-iccad/csamp-diag.png&#34; alt=&#34;Common source amplifier with a periodic excitation.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Common source amplifier with a periodic excitation.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;./img/publication/2015-iccad/csamp_dVFB-100-fig.png&#34; alt=&#34;Non Monte Carlo analysis of sidebands at the output due to trap noise in the transistor.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Non Monte Carlo analysis of sidebands at the output due to trap noise in the transistor.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Modeling and analysis of (nonstationary) low frequency noise in nano devices: A synergistic approach based on stochastic chemical kinetics</title>
+      <link>https://gmahmutoglu.github.io/publication/2014-iccad/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2014-iccad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CIRSIUM: A circuit simulator in MATLAB® with object oriented design</title>
+      <link>https://gmahmutoglu.github.io/publication/2013-prime/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2013-prime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DSP Based PMD Emulators for Built-in Testing of Coherent Optical Receivers</title>
+      <link>https://gmahmutoglu.github.io/publication/2012-arxiv2/</link>
+      <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2012-arxiv2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random Input Sampling for Complex Models Using Markov Chain Monte Carlo</title>
+      <link>https://gmahmutoglu.github.io/publication/2012-arxiv1/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2012-arxiv1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on A. Gokcen Mahmutoglu</title>
+    <link>https://gmahmutoglu.github.io/publication/index.xml</link>
+    <description>Recent content in Publications on A. Gokcen Mahmutoglu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 A. Gokcen Mahmutoglu</copyright>
+    <lastBuildDate>Thu, 11 Feb 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Non Monte Carlo Analysis of Low-Frequency Noise: Exposition of Intricate Nonstationary Behavior and Comparison with Legacy Models</title>
+      <link>https://gmahmutoglu.github.io/publication/2016-tcad/</link>
+      <pubDate>Thu, 11 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2016-tcad/</guid>
+      <description>&lt;p&gt;Non Monte Carlo Analysis of Low-Frequency Noise: Exposition of Intricate Nonstationary Behavior and Comparison with Legacy Models
+(&lt;a href=&#34;http://dx.doi.org/10.1109/TCAD.2016.2529431&#34;&gt;IEEE Xplore&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;This work introduces a new noise model for nonstationary, LF noise analysis with &lt;strong&gt;non Monte Carlo&lt;/strong&gt; methods.
+It includes an extensive case study on a previously published sawtooth oscillator circuit and its noise behavior under &lt;strong&gt;switched biasing&lt;/strong&gt; operation.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;../img/publication/2016-tcad/diag-sawtooth-sw.png&#34; alt=&#34;A sawtooth oscillator circuit with a noisy transistor (M7) and a switching subcircuit (blue) to turn M7 on and off.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        A sawtooth oscillator circuit with a noisy transistor (M7) and a switching subcircuit (blue) to turn M7 on and off.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;../img/publication/2016-tcad/fig-sawtooth-switched-psd.png&#34; alt=&#34;LF noise analysis results for the sawtooth oscillator cirucit.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        LF noise analysis results for the sawtooth oscillator cirucit.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Analysis of Low-Frequency Noise in Switched MOSFET Circuits: Revisited and Clarified</title>
+      <link>https://gmahmutoglu.github.io/publication/2015-tcas/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2015-tcas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modeling and Simulation of Low-Frequency Noise in Nano Devices: Stochastically Correct and Carefully Crafted Numerical Techniques</title>
+      <link>https://gmahmutoglu.github.io/publication/2015-tcad/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2015-tcad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modeling and analysis of nonstationary low-frequency noise in circuit simulators: Enabling non Monte Carlo techniques</title>
+      <link>https://gmahmutoglu.github.io/publication/2015-iccad/</link>
+      <pubDate>Sat, 01 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2015-iccad/</guid>
+      <description>&lt;p&gt;This work paves the way for a low-frequency (1/f, RTS &lt;em&gt;etc.&lt;/em&gt;) noise model that lends itself to &lt;strong&gt;nonstaionary&lt;/strong&gt;, &lt;strong&gt;non Monte Carlo&lt;/strong&gt; noise analysis.
+The paper includes implementation details of this framework for the example of the noise analysis of circuits with periodic excitations using &lt;strong&gt;harmonic balance&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;../img/publication/2015-iccad/csamp-diag.png&#34; alt=&#34;Common source amplifier with a periodic excitation.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Common source amplifier with a periodic excitation.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;../img/publication/2015-iccad/csamp_dVFB-100-fig.png&#34; alt=&#34;Non Monte Carlo analysis of sidebands at the output due to trap noise in the transistor.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Non Monte Carlo analysis of sidebands at the output due to trap noise in the transistor.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Modeling and analysis of (nonstationary) low frequency noise in nano devices: A synergistic approach based on stochastic chemical kinetics</title>
+      <link>https://gmahmutoglu.github.io/publication/2014-iccad/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2014-iccad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CIRSIUM: A circuit simulator in MATLAB® with object oriented design</title>
+      <link>https://gmahmutoglu.github.io/publication/2013-prime/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2013-prime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DSP Based PMD Emulators for Built-in Testing of Coherent Optical Receivers</title>
+      <link>https://gmahmutoglu.github.io/publication/2012-arxiv2/</link>
+      <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2012-arxiv2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random Input Sampling for Complex Models Using Markov Chain Monte Carlo</title>
+      <link>https://gmahmutoglu.github.io/publication/2012-arxiv1/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/publication/2012-arxiv1/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

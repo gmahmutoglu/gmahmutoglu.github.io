@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Numerical Analysis on A. Gokcen Mahmutoglu</title>
+    <link>https://gmahmutoglu.github.io/tags/numerical-analysis/index.xml</link>
+    <description>Recent content in Numerical Analysis on A. Gokcen Mahmutoglu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 A. Gokcen Mahmutoglu</copyright>
+    <atom:link href="/tags/numerical-analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Polynomial Chaos in MAPP</title>
+      <link>https://gmahmutoglu.github.io/project/poly_chaos/</link>
+      <pubDate>Thu, 02 Mar 2017 13:09:58 -0700</pubDate>
+      
+      <guid>https://gmahmutoglu.github.io/project/poly_chaos/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Polynomial_chaos&#34;&gt;Polynomial chaos&lt;/a&gt; is an expansion method for approximating sample paths of stochastic processes.
+In a polynomial chaos expansion, a complicated stochastic process is represented with a weighted linear combination of orthogonal polynomials (Legendre, Laguerre etc.) and standard random variables (uniform, Gaussian etc.).&lt;/p&gt;
+
+&lt;p&gt;Polynomial chaos lends itself especially well for &lt;em&gt;uncertainty quantification&lt;/em&gt; in simulations.
+The uncertainty is usually in a quantity that appears as a parameter in the simulation.
+For example, because of process variation, the threshold voltages of transistors will be random variables.
+The graphic below shows transient simulation results for a &lt;a href=&#34;https://en.wikipedia.org/wiki/Inverter_(logic_gate)&#34;&gt;CMOS inverter&lt;/a&gt; where the threshold voltages are randomly sampled from a uniform distribution.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../../img/project/poly_chaos/diag-cmos_inverter_small.png&#34; alt=&#34;CMOS inverter schematic&#34; /&gt;
+&lt;img src=&#34;../../img/project/poly_chaos/cmos_inverter_montecarlo.gif&#34; alt=&#34;CMOS inverter transient simulation&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The assessment of the uncertainty created by the variation of threshold voltages can be done by simulating the circuit multiple times with different parameters, i.e., the Monte Carlo way.
+Using polynomial chaos, this assessment can also be done in a &lt;strong&gt;non Monte Carlo&lt;/strong&gt; manner.
+This non Monte Carlo uncertainty quantification method was implemented in &lt;a href=&#34;https://github.com/jaijeet/MAPP&#34;&gt;MAPP&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To this end, the circuit state vector $\mathbf{x}$ is expanded in a polynomial chaos series of length $P$.&lt;/p&gt;
+
+&lt;p&gt;$$ \mathbf{x}(t, \boldsymbol{\varphi}) = \sum_{i=0}^{P-1} \mathbf{u}_i(t) \psi_i(\boldsymbol{\eta}) $$&lt;/p&gt;
+
+&lt;p&gt;The symbols in the above equation represent the following quantities:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$\boldsymbol{\varphi}$: Vector of random parameters in the system.&lt;/li&gt;
+&lt;li&gt;$\mathbf{u}_i(t)$: Time-varying polynomial chaos coefficients&lt;/li&gt;
+&lt;li&gt;$\psi_i$: A set of orthogonal polynomials such as Legendre or Laguerre.&lt;/li&gt;
+&lt;li&gt;$\boldsymbol{\eta}$: Vector of independent random variables. These random variables are usually chosen to be either uniform or normal.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After the circuit state vector $\mathbf{x}$ is put into this expanded form, we can go ahead and plug it in the circuit DAEs.&lt;/p&gt;
+
+&lt;p&gt;$$ F(\mathbf{x},\boldsymbol{\varphi}) = F\left(\sum_{i=0}^{P-1} \mathbf{u}_i \psi_i(\boldsymbol{\eta}),\boldsymbol{\varphi}\right) = 0$$&lt;/p&gt;
+
+&lt;p&gt;And define a new residual function $G$ such that&lt;/p&gt;
+
+&lt;p&gt;$$ G \left( \mathbf{u}, \boldsymbol{\eta} \right) = F\left(\sum_{i=0}^{P-1} \mathbf{u}_i \psi_i(\boldsymbol{\eta}),\boldsymbol{\varphi}\right). $$&lt;/p&gt;
+
+&lt;p&gt;Now, it is easy to compute averages over $\boldsymbol{\eta}$ for $G$.&lt;/p&gt;
+
+&lt;p&gt;$$ H_j(\mathbf{u}) = \langle G(\mathbf{u}, \boldsymbol{\eta}), \psi_j(\boldsymbol{\eta})\rangle = 0 $$&lt;/p&gt;
+
+&lt;p&gt;What we are left with are deterministic equations for the polynomial chaos expansion coefficients, $\mathbf{u}$.
+By solving the $H_j(\mathbf{u}) = 0$ equations simultaneously for all $j$, we can determine the polynomial chaos representation of the circuit unknowns.
+This enables us to compute the mean and variance of the circuit solution when the parameter variation is included in the equations.
+This computation is easy because we have chosen the random polynomial functions $\psi_i(\boldsymbol{\eta})$ such that they are zero mean and unit variance as well as orthogonal to each other.&lt;/p&gt;
+
+&lt;p&gt;For the mean we have&lt;/p&gt;
+
+&lt;p&gt;$$
+  E\left[\mathbf{x}(t, \boldsymbol{\varphi})\right] \approx E\left[\sum_{i=0}^{P-1} \mathbf{u}_i(t)\psi_i(\boldsymbol{\eta})\right] = \mathbf{u}_0(t).
+$$&lt;/p&gt;
+
+&lt;p&gt;And for the variance we have&lt;/p&gt;
+
+&lt;p&gt;$$ E\left[\mathbf{x}{(t, \boldsymbol{\varphi})}^2\right] \approx E\left[\sum_{i=0}^{P-1} \sum_{j=0}^{P-1} \mathbf{u}_i{(t)}\mathbf{u}_j{(t)} \psi_i(\boldsymbol{\eta}) \psi_j(\boldsymbol{\eta})\right] = \sum_{i=0}^{P-1} \mathbf{u}_i{(t)}^2. $$&lt;/p&gt;
+
+&lt;p&gt;The result of this computation for the inverter circuit is shown below.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;../../img/project/poly_chaos/cmos_inverter_mean_std.png&#34; alt=&#34;The mean and the standard deviation of the random output of a CMOS inverter, computed using polynomial chaos in MAPP.&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        The mean and the standard deviation of the random output of a CMOS inverter, computed using polynomial chaos in MAPP.
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>
